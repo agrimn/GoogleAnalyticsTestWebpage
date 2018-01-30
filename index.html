@@ -60,27 +60,27 @@
 		ga('create', 'UA-106754221-1','auto');
 		ga('require', 'ec');
 
-		// ga('ec:addImpression', {
-		//   'id': 'P12345',                   // Product details are provided in an impressionFieldObject.
-		//   'name': 'Android Warhol T-Shirt',
-		//   'category': 'Apparel/T-Shirts',
-		//   'brand': 'Google',
-		//   'variant': 'black',
-		//   'list': 'Search Results',
-		//   'position': 1                     // 'position' indicates the product position in the list.
-		// });
+		ga('ec:addImpression', {
+		  'id': 'P12345',                   // Product details are provided in an impressionFieldObject.
+		  'name': 'Android Warhol T-Shirt',
+		  'category': 'Apparel/T-Shirts',
+		  'brand': 'Google',
+		  'variant': 'black',
+		  'list': 'Search Results',
+		  'position': 1                     // 'position' indicates the product position in the list.
+		});
 
-		// ga('ec:addImpression', {
-		//   'id': 'P67890',
-		//   'name': 'YouTube Organic T-Shirt',
-		//   'category': 'Apparel/T-Shirts',
-		//   'brand': 'YouTube',
-		//   'variant': 'gray',
-		//   'list': 'Search Results',
-		//   'position': 2
-		// });
+		ga('ec:addImpression', {
+		  'id': 'P67890',
+		  'name': 'YouTube Organic T-Shirt',
+		  'category': 'Apparel/T-Shirts',
+		  'brand': 'YouTube',
+		  'variant': 'gray',
+		  'list': 'Search Results',
+		  'position': 2
+		});
 
-		// ga('send', 'pageview'); 
+		ga('send', 'pageview'); 
 
 		function sendProductClick() {
 			ga('ec:addProduct', {               // Provide product details in an productFieldObject.
@@ -113,7 +113,7 @@
 			  'variant': 'black'
 		  });
 		  ga('ec:setAction', 'add');
-		  ga('ec_tracker.send', 'event', 'UX', 'click', 'add to cart');     // Send data using an event.
+		  ga('send', 'event', 'UX', 'click', 'add to cart');     // Send data using an event.
 		}
 
 		function sendProductClicknImpression() {
@@ -139,7 +139,7 @@
 			});
 
 			ga('ec:setAction', 'detail');       // Detail action.
-			ga('ec_tracker.send', 'pageview');
+			ga('send', 'pageview');
 		}
 
 		function sendTransaction() {
@@ -162,7 +162,7 @@
 			  'shipping': '5.34',                     // Shipping (currency).
 			  'coupon': 'SUMMER2013'                  // Transaction coupon (string).
 			});
-			ga('ec_tracker.send', 'pageview');  
+			ga('send', 'pageview');  
 		}
 
 		function sendRefunds() {
