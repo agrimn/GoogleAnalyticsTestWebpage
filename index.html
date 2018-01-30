@@ -61,21 +61,23 @@
 		ga('require', 'ec');
 
 		ga('ec:addImpression', {
-		  'id': 'P12345',                   // Product details are provided in an impressionFieldObject.
-		  'name': 'Android Warhol T-Shirt',
-		  'category': 'Apparel/T-Shirts',
-		  'brand': 'Google',
-		  'variant': 'black',
+		  'id': 'PIMPRESSION1',                   // Product details are provided in an impressionFieldObject.
+		  'name': 'Gnar figurine',
+		  'category': 'Gift/figurine',
+		  'brand': 'Riot',
+		  'price': '60.00',
+		  'variant': 'Orange',
 		  'list': 'Search Results',
 		  'position': 1                     // 'position' indicates the product position in the list.
 		});
 
 		ga('ec:addImpression', {
-		  'id': 'P67890',
-		  'name': 'YouTube Organic T-Shirt',
+		  'id': 'PIMPRESSION2',
+		  'name': 'Annie Plushies',
 		  'category': 'Apparel/T-Shirts',
-		  'brand': 'YouTube',
-		  'variant': 'gray',
+		  'brand': 'Riot',
+  		  'price': '60.00',
+		  'variant': 'Brown',
 		  'list': 'Search Results',
 		  'position': 2
 		});
@@ -84,9 +86,9 @@
 
 		function sendProductClick() {
 			ga('ec:addProduct', {               // Provide product details in an productFieldObject.
-			  'id': 'P12345',                   // Product ID (string).
-			  'name': 'Android Warhol T-Shirt', // Product name (string).
-			  'category': 'Apparel',            // Product category (string).
+			  'id': 'PRODUCTCLICK1',            // Product ID (string).
+			  'name': '8x Scope',               // Product name (string).
+			  'category': 'Sniper attachment',  // Product category (string).
 			  'brand': 'Google',                // Product brand (string).
 			  'variant': 'black',               // Product variant (string).
 			  'price': '29.20',                 // Product price (currency).
@@ -106,11 +108,11 @@
 
 		function addToCart() {
 		  ga('ec:addProduct', {
-			  'id': 'P12345',
-			  'name': 'Android Warhol T-Shirt',
+			  'id': 'ADDTOCART1',
+			  'name': 'Mana Elixer',
 			  'category': 'Apparel',
-			  'brand': 'Google',
-			  'variant': 'black'
+			  'brand': 'Dishonored',
+			  'variant': 'blue'
 		  });
 		  ga('ec:setAction', 'add');
 		  ga('send', 'event', 'UX', 'click', 'add to cart');     // Send data using an event.
@@ -119,10 +121,10 @@
 		function sendProductClicknImpression() {
 			// The impression from a Related Products section.
 			ga('ec:addImpression', {            // Provide product details in an impressionFieldObject.
-			  'id': 'P12345',                   // Product ID (string).
-			  'name': 'Android Warhol T-Shirt', // Product name (string).
-			  'category': 'Apparel/T-Shirts',   // Product category (string).
-			  'brand': 'Google',                // Product brand (string).
+			  'id': 'CLICK&IMPRESSION1',        // Product ID (string).
+			  'name': 'Branch',                 // Product name (string).
+			  'category': 'Tree',               // Product category (string).
+			  'brand': 'Branch Metrics',        // Product brand (string).
 			  'variant': 'Black',               // Product variant (string).
 			  'list': 'Related Products',       // Product list (string).
 			  'position': 1                     // Product position (number).
@@ -130,11 +132,12 @@
 
 			// The product being viewed.
 			ga('ec:addProduct', {                 // Provide product details in an productFieldObject.
-			  'id': 'P67890',                     // Product ID (string).
-			  'name': 'YouTube Organic T-Shirt',  // Product name (string).
-			  'category': 'Apparel/T-Shirts',     // Product category (string).
-			  'brand': 'YouTube',                 // Product brand (string).
+			  'id': 'CLICK&IMPRESSION2',          // Product ID (string).
+			  'name': 'Pixel 2 Phone',            // Product name (string).
+			  'category': 'Phone',     	          // Product category (string).
+			  'brand': 'Google',                  // Product brand (string).
 			  'variant': 'gray',                  // Product variant (string).
+			  'list': 'Related Products',         // Product list (string).
 			  'position': 2                       // Product position (number).
 			});
 
@@ -144,22 +147,22 @@
 
 		function sendTransaction() {
 			ga('ec:addProduct', {               // Provide product details in an productFieldObject.
-			  'id': 'P12345',                   // Product ID (string).
-			  'name': 'Android Warhol T-Shirt', // Product name (string).
-			  'category': 'Apparel',            // Product category (string).
-			  'brand': 'Google',                // Product brand (string).
+			  'id': 'PURCHASE1',                   // Product ID (string).
+			  'name': 'aghanims scepter',       // Product name (string).
+			  'category': 'Rod',            // Product category (string).
+			  'brand': 'Valve',                // Product brand (string).
 			  'variant': 'black',               // Product variant (string).
-			  'price': '29.20',                 // Product price (currency).
-			  'coupon': 'APPARELSALE',          // Product coupon (string).
+			  'price': '12.50',                 // Product price (currency).
+			  'coupon': 'STEAMSALE',          // Product coupon (string).
 			  'quantity': 1                     // Product quantity (number).
 			});
 
 			ga('ec:setAction', 'purchase', {          // Transaction details are provided in an actionFieldObject.
-			  'id': 'T12345',                         // (Required) Transaction id (string).
-			  'affiliation': 'Google Store - Online', // Affiliation (string).
-			  'revenue': '37.39',                     // Revenue (currency).
-			  'tax': '2.85',                          // Tax (currency).
-			  'shipping': '5.34',                     // Shipping (currency).
+			  'id': 'DOTA_TRANSACTION1',           // (Required) Transaction id (string).
+			  'affiliation': 'Dota 2 - Online',    // Affiliation (string).
+			  'revenue': '20.50',                     // Revenue (currency).
+			  'tax': '3',                          // Tax (currency).
+			  'shipping': '5',                     // Shipping (currency).
 			  'coupon': 'SUMMER2013'                  // Transaction coupon (string).
 			});
 			ga('send', 'pageview');  
@@ -168,12 +171,12 @@
 		function sendRefunds() {
 			// Refund a single product.
 			ga('ec:addProduct', {
-			  'id': 'P12345',       // Product ID is required for partial refund.
+			  'id': 'REFUNDID_2',       // Product ID is required for partial refund.
 			  'quantity': 1         // Quantity is required for partial refund.
 			});
 
 			ga('ec:setAction', 'refund', {
-			  'id': 'T12345',       // Transaction ID is required for partial refund.
+			  'id': 'TRANSACTION2',       // Transaction ID is required for partial refund.
 			});
 		}
 	</script>
