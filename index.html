@@ -184,6 +184,10 @@
 			    'step': 1,
 			    'option': 'Visa'
 			});
+			ga('send', 'event', 'Checkout', 'Option', {
+			    hitCallback: function() {
+			      // advance to next page
+			});
 		}
 
 		function sendRefunds() {
