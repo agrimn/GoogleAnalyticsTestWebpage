@@ -167,6 +167,24 @@
 			});
 			ga('send', 'pageview');  
 		}
+		
+		function sendCheckout() {
+			ga('ec:addProduct', {      	// Provide product details in an productFieldObject.
+			  'id': 'CHECKOUT2',         	// Product ID (string).
+			  'name': 'Humbabas Fang',	// Product name (string).
+			  'category': 'Dagger',         // Product category (string).
+			  'brand': 'Assasins Creed',	// Product brand (string).
+			  'variant': 'Silver',          // Product variant (string).
+			  'price': '29.20',            	// Product price (currency).
+			  'quantity': 1                 // Product quantity (number).
+			});
+
+			// Add the step number and additional info about the checkout to the action.
+			ga('ec:setAction','checkout', {
+			    'step': 1,
+			    'option': 'Visa'
+			});
+		}
 
 		function sendRefunds() {
 			// Refund a single product.
@@ -193,6 +211,7 @@
 		<button type="button" onclick="sendProductClicknImpression()">ProductClickAndImpression</button>
 		<button type="button" onclick="sendTransaction()">SendTransaction</button>
 		<button type="button" onclick="sendRefunds()">sendRefund</button>
+		<button type="button" onclick="sendCheckout()">sendCheckout</button>
 		<button type="button" onclick="addToCart()">addToCart</button>
 		<hr>
 	</div>
